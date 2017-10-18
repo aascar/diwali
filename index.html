@@ -80,11 +80,12 @@
         form{
             display: none;
             margin-left: 25px;
+            margin-bottom: 160px;
         }
         a.click{
             font-size: 16px;
             color: white;
-            bottom: 100px;
+            bottom: 120px;
             left: 62px;
             position: fixed;
             z-index: 20;
@@ -396,7 +397,7 @@
     });
 
     function attachName() {
-        document.querySelector("p").innerHTML = "- " + unescape(window.location.search.replace(/\W+/g, ' '));
+        document.querySelector("p").innerHTML = "- " + unescape(window.location.search.replace(/[^a-zA-Z-]/g, ' ').replace(/\W+/g, ' '));
     }
 
     function handleSubmit(form) {
