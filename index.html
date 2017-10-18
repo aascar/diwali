@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Wishing Happy Diwali !</title>
+    <meta property="og:title" content="Wishing Happy Diwali !" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://diwali.aascar.in" />
+    <meta property="og:image" content="https://diwali.aascar.in/diwali.jpeg" />
+    <meta property="og:description" content="Wish You And Your Family A Happy And Prosperous Diwali"/>
+    <meta property="fb:app_id" content=""/>
     <style>
         * {
             box-sizing: border-box;
@@ -13,9 +19,12 @@
             padding: 0;
             margin: 0;
             background-color: #000;
-            background: url("diwali-min.jpeg") no-repeat;
+            background: url("diwali.jpeg") no-repeat;
             background-position: right;
             background-size: cover;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
         canvas {
             cursor: crosshair;
@@ -25,11 +34,11 @@
             display: block;
             position: fixed;
             z-index: 10;
-            color: white;
+            color: yellow;
             width: 100%;
             margin-top: 10%;
             padding: 20px;
-            font-size: 36px;
+            font-size: 28px;
         }
         h1 {
             margin: 0;
@@ -40,6 +49,7 @@
             float: right;
             padding-top: 0;
             margin-top: 0;
+            color: white;
         }
         span {
             text-transform: capitalize;
@@ -59,8 +69,11 @@
     </style>
 </head>
 <body>
+<div class="bg">
+
+</div>
 <div>
-    <h1 align="center">Wish you and your family happy Diwali</h1>
+    <h1 align="center">Wish You And Your Family A Happy And Prosperous Diwali</h1>
     <p> - <span>Jyothi Babu Araja</span></p>
 </div>
 <canvas id="canvas">Canvas is not supported in your browser. Any how Happy Diwali !</canvas>
