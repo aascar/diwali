@@ -75,6 +75,7 @@
 <div>
     <h1 align="center">Wish You And Your Family A Happy And Prosperous Diwali</h1>
     <p> - <span>Jyothi Babu Araja</span></p>
+    <div class="addthis_inline_share_toolbox"></div>
 </div>
 <canvas id="canvas">Canvas is not supported in your browser. Any how Happy Diwali !</canvas>
 </body>
@@ -363,11 +364,12 @@
         mousedown = false;
     });
 
-    // once the window loads, we are ready for some fireworks!
-    window.onload = loop;
-
     function attachName() {
         document.querySelector("span").innerHTML = unescape(window.location.search.slice(1));
     }
+
+    // once the window loads, we are ready for some fireworks!
+    window.onload = loop;
 </script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59e74f8a3ec6f2fe"></script>
 </html>
