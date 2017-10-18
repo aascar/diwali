@@ -49,8 +49,6 @@
             padding-top: 0;
             margin-top: 0;
             color: white;
-        }
-        span {
             text-transform: capitalize;
         }
         @media(min-width: 768px) {
@@ -60,20 +58,54 @@
             div{
                 width: 60%;
             }
-
             p {
                 font-size: 32px;
             }
         }
+
+        input{
+            height: 34px;
+            padding:5px 15px;
+            border:2px solid #ccc;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
+        input:focus {
+            border-color:#333;
+        }
+        input[type=submit] {
+            cursor:pointer;
+            background-color: lightblue;
+        }
+        form{
+            display: none;
+            margin-left: 25px;
+        }
+        a.click{
+            font-size: 16px;
+            color: white;
+            bottom: 100px;
+            left: 62px;
+            position: fixed;
+            z-index: 20;
+        }
+
+        a.click:hover{
+            color: cornflowerblue;
+        }
     </style>
 </head>
 <body>
-<div class="bg">
-
-</div>
 <div>
     <h1 align="center">Wish You And Your Family A Happy And Prosperous Diwali</h1>
-    <p> - <span></span></p>
+    <p></p>
+    <a class="click" onclick="document.querySelector('form').style.display='block'">Get Your Wishes</a>
+    <div>
+        <form onsubmit="handleSubmit(this);">
+            <input type="text" placeholder="Your Name"/>
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
     <div class="addthis_inline_share_toolbox"></div>
 </div>
 <canvas id="canvas">Canvas is not supported in your browser. Any how Happy Diwali !</canvas>
@@ -364,12 +396,19 @@
     });
 
     function attachName() {
-        document.querySelector("span").innerHTML = unescape(window.location.search.slice(1));
+        document.querySelector("p").innerHTML = "- " + unescape(window.location.search.replace(/\W+/g, ' '));
+    }
+
+    function handleSubmit(form) {
+        var el = document.querySelector("input");
+        el.setAttribute("name", el.value);
+        el.value = null;
+        form.submit();
     }
 
     // once the window loads, we are ready for some fireworks!
     window.onload = loop;
-    
+
 </script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59e74f8a3ec6f2fe"></script>
 </html>
